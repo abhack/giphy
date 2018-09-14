@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Giphy API</title>
+    <link rel="stylesheet" href="">
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+    </script>
+
+</head>
+<body>
+    <h1 style='display: flex; justify-content:center'>Giphy App</h1>
+    <div id="add-topic" style="display:flex; flex-wrap:wrap; justify-content: center;"></div>
+    <form style='display: flex; justify-content:center'action=''>
+        <label style="margin-right:15px">Create Topic</label>
+        <input id="topic" type="text">
+        <button style="margin-left:15px" onclick="addTopicOnClick()">Add Topic</button>
+        <button style="margin-left:15px" id='reset' onclick="reset()">Reset</button>
+    </form>
+    <div style="margin:10px"></div>
+    <div>
+        <form style='display: flex; justify-content:center'action="">
+            <label style="margin-right:15px">Giphy search</label>
+            <input id="query" type="text">
+            <button style="margin-left:15px" onclick="searchOnClick()">Submit</button>
+        </form>
+    </div>
+    <div id='results' class='animate' style="display:flex; flex-wrap:wrap; justify-content: center;"></div>
+    
+    <script type="text/javascript" src="index.js"></script>
+</body>
+</html>
