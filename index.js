@@ -1,9 +1,9 @@
 var query = ''
-var key = 'ecIHIIxXu0erhdpsCv4omv5fmNQn7ixD'
 var url = ''
 var giphyJSON = {}  //store the JSON object to recall without re-running the API
 
 
+var key = 'ecIHIIxXu0erhdpsCv4omv5fmNQn7ixD'
 function searchOnClick() {
     event.preventDefault()
     $('#results').empty()
@@ -80,7 +80,7 @@ function topicOnClick() {
         giphyJSON = data
         for (let i=0; i < data.data.length; i++){
             // console.log(data.data[i].images.original.url)
-            $('#results').append(`<img style= "margin:5px;height:22%;width:22%" onclick="animateImage()" src="${data.data[i].images.original_still.url}" class="${data.data[i].images.original.url}" id="${i}"></img>`)
+            $('#results').append(`<img style= "margin:5px;height:22%;width:22%" onclick="animateImage()" src="${data.data[i].images.original_still.url}" animate-url="${data.data[i].images.original.url}" id="${i}"></img>`)
             // $(`#${data.data[i].id}`).setAttributeNode('animate', `${data.data[i].images.original.url}`)
             // $(`'#${data.data[i].id}'`).setAttributeNode('still', `${data.data[i].images.original_still.url}`) 
         }
@@ -96,3 +96,21 @@ function reset(){
     $('#add-topic').empty()
     $('#results').empty()
 }
+
+//click handlers
+//puts event on document (like a container) is an element - browser recognizing all default event types
+document.addEventListener('click', function (event) {
+if (!event.target.matches('.click-me')) return;
+        event.preventDefault();
+        console.log(event.target);    
+    }, false);
+} 
+
+document.getElementById().addEventListener('click', function(event){
+
+})
+
+
+
+//JQuery 
+.on("click")
