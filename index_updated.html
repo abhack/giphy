@@ -9,7 +9,7 @@
 <body>
     <div>
         <input type="text" name="srch" id="srch_input">
-        <input type="submit" value="Search" id="sbmt">
+        <input type="button" value="Search" id="srch-btn">
     </div>
     <div></div>
     <input type="text" name="lname" id="btn_input">
@@ -25,6 +25,16 @@
             btn.innerText = inputVal;
             document.getElementById("pic_btns").appendChild(btn);
         });
+        
+        var query = ''
+        document.getElementById("srch-btn").addEventListener("click", function(e) {
+            e.preventDefault();
+            document.getElementById("pic_btns").removeChild
+            document.getElementById("pics").innerHTML = ''
+            query = document.getElementById("srch_input").value;
+            const promise = ajaxCall(query);
+            promise.then(e => e.data.map(e1 => addPic(e1)));
+        })
 
         function ajaxCall(query) {
             const url = `https://api.giphy.com/v1/gifs/search?q=${query}&api_key=${key}&limit=25`
@@ -44,8 +54,8 @@
             newPic.dataset.isMoving = false;
             newPic.classList.add("pic");
             newPic.src = still;
-            newPic.style.width = "200px";
-            newPic.style.height = "200px";
+            newPic.style.width = "22%";
+            newPic.style.height = "22%";
             let x = document.getElementById("pics");
             document.getElementById("pics").appendChild(newPic);
         }
@@ -69,8 +79,7 @@
             }
         })
 
-        const promise = ajaxCall("test");
-        promise.then(e => e.data.map(e1 => addPic(e1)));
+    
     </script>
 </body>
-</html>
+</html> 
